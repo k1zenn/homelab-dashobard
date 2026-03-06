@@ -62,7 +62,7 @@ export default function Home() {
           </p>
         </header>
 
-        <section className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+        <section className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
           <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-3">
             <p className="text-xs text-zinc-400">Total VMs</p>
             <p className="text-xl font-semibold">1</p>
@@ -72,10 +72,6 @@ export default function Home() {
             <p className={`text-xl font-semibold ${isOnline ? "text-green-400" : "text-red-400"}`}>
               {isOnline ? "1" : "0"}
             </p>
-          </div>
-          <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-3">
-            <p className="text-xs text-zinc-400">Provider</p>
-            <p className="text-xl font-semibold">DO</p>
           </div>
           <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-3">
             <p className="text-xs text-zinc-400">Public Status</p>
@@ -96,14 +92,12 @@ export default function Home() {
               <p className="text-zinc-300">Status: Checking...</p>
             ) : droplet ? (
               <>
-                <p className="text-zinc-300">Name: {droplet.name}</p>
+                <p className="text-zinc-300">Name: openclaw</p>
                 <p className="text-zinc-300">
                   Status: {droplet.status === "active" ? "🟢 Active" : `🔴 ${droplet.status}`}
                 </p>
                 <p className="text-zinc-300">Uptime: {droplet.uptime}</p>
-                <p className="text-zinc-400 text-sm mt-2">
-                  {droplet.ip} • {droplet.region}
-                </p>
+                <p className="text-zinc-400 text-sm mt-2">{droplet.region}</p>
               </>
             ) : (
               <>
