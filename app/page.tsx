@@ -57,7 +57,7 @@ export default function Home() {
       <div className="max-w-5xl mx-auto">
         <header className="mb-8">
           <p className="text-sm text-zinc-400">Personal Dashboard</p>
-          <h1 className="text-3xl md:text-4xl font-bold mt-1">Homelab</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mt-1">NodeWatch</h1>
           <p className="text-zinc-300 mt-2 text-sm md:text-base">
             Quick overview of my current setup.
           </p>
