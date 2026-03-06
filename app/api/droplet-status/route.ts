@@ -7,12 +7,7 @@ type DoDroplet = {
   created_at: string;
   region?: { slug?: string; name?: string };
   image?: { distribution?: string; name?: string };
-  memory?: number;
-  vcpus?: number;
-  disk?: number;
-  networks?: {
-    v4?: Array<{ ip_address: string; type: string }>;
-  };
+
 };
 
 type DoListResponse = {
@@ -83,20 +78,11 @@ export async function GET() {
       return NextResponse.json({ error: "No droplets found" }, { status: 404 });
     }
 
-    const publicIp =
-      droplet.networks?.v4?.find((net) => net.type === "public")?.ip_address ?? "N/A";
-
     return NextResponse.json({
-      id: droplet.id,
-      name: droplet.name,
       status: droplet.status,
       uptime: formatUptime(droplet.created_at),
       region: droplet.region?.name ?? droplet.region?.slug ?? "N/A",
       distro: droplet.image?.distribution ?? droplet.image?.name ?? "N/A",
-      ip: publicIp,
-      memoryMb: droplet.memory ?? null,
-      vcpus: droplet.vcpus ?? null,
-      diskGb: droplet.disk ?? null,
       checkedAt: new Date().toISOString(),
     });
   } catch {

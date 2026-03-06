@@ -3,16 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 
 type DropletStatus = {
-  id: number;
-  name: string;
   status: string;
   uptime: string;
   region: string;
   distro: string;
-  ip: string;
-  memoryMb: number | null;
-  vcpus: number | null;
-  diskGb: number | null;
   checkedAt: string;
 };
 
@@ -110,7 +104,7 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="mt-8 text-xs text-zinc-500">Last updated • v0.4</footer>
+        <footer className="mt-8 text-xs text-zinc-500">Last updated • v0.6</footer>
       </div>
     </main>
   );
