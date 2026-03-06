@@ -110,7 +110,7 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="mt-8 text-xs text-zinc-500">Last updated manually • v0.4</footer>
+        <footer className="mt-8 text-xs text-zinc-500">Last updated • v0.4</footer>
       </div>
     </main>
   );
